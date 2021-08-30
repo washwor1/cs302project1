@@ -27,6 +27,7 @@ int main(int argc, char *argv[]) {
     {
         cout << line[i] << " ";
     }
+    cout << line[line.size()] << endl;
 
     return 0;
 }
