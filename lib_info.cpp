@@ -7,10 +7,11 @@
 #include <fstream>
 #include <string>
 #include <algorithm>
+#include <iomanip>
 
 using namespace std;
 
-void output(const map<string,Artist> &Artists);
+void output( map<string,Artist> &Artists);
 
 int main(int argc, char *argv[]) {
     map<string,Artist> Artists;
@@ -35,21 +36,27 @@ int main(int argc, char *argv[]) {
         Artists[line.at(2)].albums[line.at(3)].songs[stoi(line.at(5))].title = line.at(0);
         sscanf(line.at(1).c_str(), "%2d:%2d", &minutes, &seconds);
         Artists[line.at(2)].albums[line.at(3)].songs[stoi(line.at(5))].time = (minutes*60+seconds);
-        
+        Artists[line.at(2)].albums[line.at(3)].songs[stoi(line.at(5))].track = (stoi(line.at(5)));
+        Artists[line.at(2)].albums[line.at(3)].nsongs=Artists[line.at(2)].albums[line.at(3)].songs.size();
+        Artists[line.at(2)].albums[line.at(3)].time+=Artists[line.at(2)].albums[line.at(3)].songs[stoi(line.at(5))].time;
+        Artists[line.at(2)].albums[line.at(3)].name = line.at(3);
+        Artists[line.at(2)].name=line.at(2);
+        Artists[line.at(2)].time+=Artists[line.at(2)].albums[line.at(3)].songs[stoi(line.at(5))].time;
+        Artists[line.at(2)].nsongs++;
     }
-    
 
+    output(Artists);
     return 0;
 }
 
-//comment outpus into the formated on the writeup
+//comment output into the formated on the writeup
 void output(map<string,Artist> &Artists) {
     for(map<string,Artist>::iterator i = Artists.begin(); i!=Artists.end(); ++i) {
-        cout << i->second.name << ": " << i->second.nsongs << ", " << i->second.time / 60 << ":" << i->second.time % 60 << endl;
+        cout << left << setw(0) << i->second.name << ": " << i->second.nsongs << ", " << i->second.time / 60 << ":" << right << setw(2) << setfill('0') << i->second.time % 60 << endl;
         for (map<string, Album>::iterator j = i->second.albums.begin(); j != i->second.albums.end(); ++j){
-            cout << "        " << j->second.name << ": " << j->second.nsongs << ", " << j->second.time / 60 << ":" << j->second.time % 60 << endl;
+            cout << left << setw(0) << "        " << j->second.name << ": " << j->second.nsongs << ", " << j->second.time / 60 << ":" << right << setw(2) << setfill('0') << j->second.time % 60 << endl;
             for (map<int, Song>::iterator k = j->second.songs.begin(); k != j->second.songs.end(); ++k){
-                cout << "                 " << k->second.track << ". " << k-> second.title << ": " << k->second.time / 60 << ":" << k->second.time % 60;
+                cout << left << setw(0) << "                 " << k->second.track << ". " << k-> second.title << ": " << k->second.time / 60 << ":" << right << setw(2) << setfill('0') << k->second.time % 60 << '\n';
             }
         }
     }
