@@ -1,5 +1,0 @@
-washwor1 and Poor-Him
-https://github.com/washwor1/cs302project1
-Andy: I wrote the code to the output and help find code to change time from minutes to seconds from string.
-Jay: Worked on inputs and putting items into structs.
-The problem that we had most working in a pair was getting github working properly and how to divide up the work.
