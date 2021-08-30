@@ -25,17 +25,17 @@ int main(int argc, char *argv[]) {
     }
     Artists[line[3]] = 
 
-    for (int i = 0; i < line.size() - 1; i++)
-    {
-        cout << line[i] << " ";
-    }
-    cout << line[line.size()] << endl;
-
     return 0;
 }
 
 void output(map<string,Artist> &Artists) {
     for(map<string,Artist>::iterator i = Artists.begin(); i!=Artists.end(); ++i) {
-        cout << i->second.name << ": " << i->second.nsongs <<  
+        cout << i->second.name << ": " << i->second.nsongs << ", " << i->second.time / 60 << ":" << i->second.time % 60 << endl;
+        for (map<string, Album>::iterator j = i->second.albums.begin(); j != i->second.albums.end(); ++j){
+            cout << "        " << j->second.name << ": " << j->second.nsongs << ", " << j->second.time / 60 << ":" << j->second.time % 60 << endl;
+            for (map<int, Song>::iterator k = j->second.songs.begin(); k != j->second.songs.end(); ++k){
+                cout << "                 " << k->second.track << ". " << k-> second.title << ": " << k->second.time / 60 << ":" << k->second.time % 60;
+            }
+        }
     }
 }
