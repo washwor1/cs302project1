@@ -1,3 +1,5 @@
+//Waltor Ashworth and Andy Zeng
+
 #include <iostream>
 #include <vector>
 
