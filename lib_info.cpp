@@ -5,6 +5,7 @@
 #include <vector>
 #include <fstream>
 #include <string>
+#include <algorithm>
 
 using namespace std;
 
@@ -17,9 +18,15 @@ int main(int argc, char *argv[]) {
     file.open(argv[1], ifstream::in);
     for (int i = 0; i < 7; i++)
     {
-        getline(file, temp, ' ');
+        file >> temp;
         line.push_back(temp);
+        replace(line[i].begin(), line[i].end(), '_', ' ');
     }
-    
+
+    for (int i = 0; i < line.size() - 1; i++)
+    {
+        cout << line[i] << " ";
+    }
+
     return 0;
 }
