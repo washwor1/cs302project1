@@ -56,7 +56,7 @@ void output(map<string,Artist> &Artists) {
         for (map<string, Album>::iterator j = i->second.albums.begin(); j != i->second.albums.end(); ++j){
             cout << left << setw(0) << "        " << j->second.name << ": " << j->second.nsongs << ", " << j->second.time / 60 << ":" << right << setw(2) << setfill('0') << j->second.time % 60 << endl;
             for (map<int, Song>::iterator k = j->second.songs.begin(); k != j->second.songs.end(); ++k){
-                cout << left << setw(0) << "                 " << k->second.track << ". " << k-> second.title << ": " << k->second.time / 60 << ":" << right << setw(2) << setfill('0') << k->second.time % 60 << '\n';
+                cout << left << setw(0) << "                " << k->second.track << ". " << k-> second.title << ": " << k->second.time / 60 << ":" << right << setw(2) << setfill('0') << k->second.time % 60 << '\n';
             }
         }
     }
