@@ -26,6 +26,7 @@ int main(int argc, char *argv[]) {
     3 is Album Name
     4 is Genre
     5 is Song Position in Album*/
+    
     while(file>>line.at(0)>>line.at(1)>>line.at(2)>>line.at(3)>>line.at(4)>>line.at(5)) {
         for(int i = 0; i<6;++i) {
             replace(line[i].begin(), line[i].end(), '_', ' ');
