@@ -14,6 +14,9 @@ struct Album {
     string name;
     int time;
     int nsongs;  // optional variable but makes it easier
+    Album() {
+        time =0;
+    }
 };
 
 struct Artist {
@@ -21,4 +24,8 @@ struct Artist {
     string name;
     int time;
     int nsongs;
+    Artist() {
+        time = 0;
+        nsongs=0;
+    }
 };

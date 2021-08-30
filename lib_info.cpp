@@ -35,10 +35,16 @@ int main(int argc, char *argv[]) {
         Artists[line.at(2)].albums[line.at(3)].songs[stoi(line.at(5))].title = line.at(0);
         sscanf(line.at(1).c_str(), "%2d:%2d", &minutes, &seconds);
         Artists[line.at(2)].albums[line.at(3)].songs[stoi(line.at(5))].time = (minutes*60+seconds);
-        
+        Artists[line.at(2)].albums[line.at(3)].songs[stoi(line.at(5))].track = (stoi(line.at(5)));
+        Artists[line.at(2)].albums[line.at(3)].nsongs=Artists[line.at(2)].albums[line.at(3)].songs.size();
+        Artists[line.at(2)].albums[line.at(3)].time+=Artists[line.at(2)].albums[line.at(3)].songs[stoi(line.at(5))].time;
+        Artists[line.at(2)].albums[line.at(3)].name = line.at(3);
+        Artists[line.at(2)].name=line.at(2);
+        Artists[line.at(2)].time+=Artists[line.at(2)].albums[line.at(3)].songs[stoi(line.at(5))].time;
+        Artists[line.at(2)].nsongs++;
     }
-    
 
+    output(Artists);
     return 0;
 }
 
