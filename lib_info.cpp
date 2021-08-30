@@ -1,5 +1,5 @@
 //Walter Ashworth and Andy Zeng
-
+//Reference: We got structs from the write up and the time conversion from stackoverflow
 #include "structs.h"
 #include <iostream>
 #include <vector>
