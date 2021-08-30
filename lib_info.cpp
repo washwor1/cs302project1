@@ -26,8 +26,8 @@ int main(int argc, char *argv[]) {
     3 is Album Name
     4 is Genre
     5 is Song Position in Album*/
-    
-    while(file>>line.at(0)>>line.at(1)>>line.at(2)>>line.at(3)>>line.at(4)>>line.at(5)) {
+    //while the file can input into line 6 times it will it will replace the underscore with a space
+     while(file>>line.at(0)>>line.at(1)>>line.at(2)>>line.at(3)>>line.at(4)>>line.at(5)) {
         for(int i = 0; i<6;++i) {
             replace(line[i].begin(), line[i].end(), '_', ' ');
         }
@@ -41,6 +41,7 @@ int main(int argc, char *argv[]) {
     return 0;
 }
 
+//comment outpus into the formated on the writeup
 void output(map<string,Artist> &Artists) {
     for(map<string,Artist>::iterator i = Artists.begin(); i!=Artists.end(); ++i) {
         cout << i->second.name << ": " << i->second.nsongs << ", " << i->second.time / 60 << ":" << i->second.time % 60 << endl;
