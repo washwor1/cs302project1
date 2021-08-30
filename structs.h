@@ -1,3 +1,5 @@
+//pulled these structs from the lab writeup and added a couple constructors to make life easier 
+
 #include <iostream>
 #include <map>
 

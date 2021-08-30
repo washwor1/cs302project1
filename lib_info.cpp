@@ -10,7 +10,7 @@
 
 using namespace std;
 
-void output(const map<string,Artist> &Artists);
+void output( map<string,Artist> &Artists);
 
 int main(int argc, char *argv[]) {
     map<string,Artist> Artists;
@@ -55,7 +55,7 @@ void output(map<string,Artist> &Artists) {
         for (map<string, Album>::iterator j = i->second.albums.begin(); j != i->second.albums.end(); ++j){
             cout << "        " << j->second.name << ": " << j->second.nsongs << ", " << j->second.time / 60 << ":" << j->second.time % 60 << endl;
             for (map<int, Song>::iterator k = j->second.songs.begin(); k != j->second.songs.end(); ++k){
-                cout << "                 " << k->second.track << ". " << k-> second.title << ": " << k->second.time / 60 << ":" << k->second.time % 60;
+                cout << "                 " << k->second.track << ". " << k-> second.title << ": " << k->second.time / 60 << ":" << k->second.time % 60 << '\n';
             }
         }
     }
