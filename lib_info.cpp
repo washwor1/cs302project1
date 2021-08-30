@@ -1,5 +1,6 @@
 //Walter Ashworth and Andy Zeng
 //Reference: We got structs from the write up and the time conversion from stackoverflow
+//https://stackoverflow.com/questions/39885508/parsing-a-string-with-a-colon-and-setting-both-sides-to-different-variables-c
 #include "structs.h"
 #include <iostream>
 #include <vector>
