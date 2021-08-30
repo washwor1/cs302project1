@@ -6,10 +6,6 @@
 #include <fstream>
 #include <string>
 #include <algorithm>
-<<<<<<< HEAD
-
-=======
->>>>>>> 3a70f5bbbb8c5b28ed1714ebe60f363e9892ed99
 
 using namespace std;
 
@@ -27,6 +23,7 @@ int main(int argc, char *argv[]) {
         line.push_back(temp);
         replace(line[i].begin(), line[i].end(), '_', ' ');
     }
+    Artists[line[3]] = 
 
     for (int i = 0; i < line.size() - 1; i++)
     {
