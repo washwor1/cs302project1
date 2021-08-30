@@ -13,11 +13,13 @@ int main(int argc, char *argv[]) {
     map<string,Artist> Artists;
     vector<string> line;
     string temp;
-    ifstream file("argv[1]");
+    ifstream file;
+    file.open(argv[1], ifstream::in);
     for (int i = 0; i < 7; i++)
     {
-        getline(file,temp, ' ');
+        getline(file, temp, ' ');
         line.push_back(temp);
+        cout << line[i] << " ";
     }
     
     return 0;
