@@ -6,7 +6,10 @@
 #include <fstream>
 #include <string>
 #include <algorithm>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 3a70f5bbbb8c5b28ed1714ebe60f363e9892ed99
 
 using namespace std;
 
@@ -16,15 +19,20 @@ int main(int argc, char *argv[]) {
     map<string,Artist> Artists;
     vector<string> line;
     string temp;
-    ofstream musicf;
-
-    musicf.open("argv[1]");
-    while (!musicf.eof())
+    ifstream file;
+    file.open(argv[1], ifstream::in);
+    for (int i = 0; i < 7; i++)
     {
-        getline(musicf, temp);
+        file >> temp;
+        line.push_back(temp);
+        replace(line[i].begin(), line[i].end(), '_', ' ');
     }
 
-
+    for (int i = 0; i < line.size() - 1; i++)
+    {
+        cout << line[i] << " ";
+    }
+    cout << line[line.size()] << endl;
 
     return 0;
 }
