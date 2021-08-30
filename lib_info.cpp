@@ -8,7 +8,9 @@
 
 using namespace std;
 
+
 int main(int argc, char *argv[]) {
+    map<string,Artist> Artists;
     vector<string> line;
     string temp;
     ifstream file("argv[1]");
