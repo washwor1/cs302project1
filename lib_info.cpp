@@ -11,14 +11,12 @@ using namespace std;
 int main(int argc, char *argv[]) {
     vector<string> line;
     string temp;
-    ofstream musicf;
-    musicf.open("argv[1]");
-    while (!musicf.eof())
+    ifstream file("argv[1]");
+    for (int i = 0; i < 7; i++)
     {
-        getline(musicf, temp);
+        getline(file,temp, ' ');
+        line.push_back(temp);
     }
     
-
-
     return 0;
 }
