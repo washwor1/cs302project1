@@ -31,6 +31,6 @@ int main(int argc, char *argv[]) {
 
 void output(map<string,Artist> &Artists) {
     for(map<string,Artist>::iterator i = Artists.begin(); i!=Artists.end(); ++i) {
-        
+        cout << i->second.name << ": " << i->second.nsongs <<  
     }
 }
