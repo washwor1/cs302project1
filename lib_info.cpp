@@ -19,7 +19,6 @@ int main(int argc, char *argv[]) {
     {
         getline(file, temp, ' ');
         line.push_back(temp);
-        cout << line[i] << " ";
     }
     
     return 0;
