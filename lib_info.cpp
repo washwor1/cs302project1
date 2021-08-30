@@ -1,6 +1,6 @@
 //Walter Ashworth and Andy Zeng
 
-#include <structs.h>
+#include "structs.h"
 #include <iostream>
 #include <vector>
 #include <fstream>
