@@ -1,5 +1,8 @@
 //Walter Ashworth and Andy Zeng
 //Reference: We got structs from the write up and the time conversion from stackoverflow
+//washwor1
+//https://github.com/washwor1/cs302project1
+//Andy: I wrote the code to have input from the text file and wrote
 //https://stackoverflow.com/questions/39885508/parsing-a-string-with-a-colon-and-setting-both-sides-to-different-variables-c
 #include "structs.h"
 #include <iostream>

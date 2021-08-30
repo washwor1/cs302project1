@@ -1,2 +1,2 @@
 # cs302project1
-efknlnljseflsikeflefjb
+g++ -c lib_info.cpp -std=c++11
