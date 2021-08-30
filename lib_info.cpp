@@ -6,10 +6,6 @@
 #include <fstream>
 #include <string>
 #include <algorithm>
-<<<<<<< HEAD
-
-=======
->>>>>>> 3a70f5bbbb8c5b28ed1714ebe60f363e9892ed99
 
 using namespace std;
 
@@ -17,28 +13,32 @@ void output(const map<string,Artist> &Artists);
 
 int main(int argc, char *argv[]) {
     map<string,Artist> Artists;
-    vector<string> line;
+    vector<string> line(6);
     string temp;
     ifstream file;
     file.open(argv[1], ifstream::in);
-    for (int i = 0; i < 7; i++)
-    {
-        file >> temp;
-        line.push_back(temp);
-        replace(line[i].begin(), line[i].end(), '_', ' ');
-    }
 
-    for (int i = 0; i < line.size() - 1; i++)
-    {
-        cout << line[i] << " ";
+
+    /* Reference for line:
+    0 is Song Name
+    1 is Song Length
+    2 is Artist Name
+    3 is Album Name
+    4 is Genre
+    5 is Song Position in Album*/
+    while(file>>line.at(0)>>line.at(1)>>line.at(2)>>line.at(3)>>line.at(4)>>line.at(5)) {
+        for(int i = 0; i<6;++i) {
+            replace(line[i].begin(), line[i].end(), '_', ' ');
+        }
+        Artists[line.at(2)].albums[line.at(3)].songs
     }
-    cout << line[line.size()] << endl;
+    
 
     return 0;
 }
 
 void output(map<string,Artist> &Artists) {
     for(map<string,Artist>::iterator i = Artists.begin(); i!=Artists.end(); ++i) {
-        cout << i->second.name << ": " << i->second.nsongs <<  
+        cout << i->second.name << ": " << i->second.nsongs << 
     }
 }
